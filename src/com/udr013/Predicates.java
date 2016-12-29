@@ -19,6 +19,8 @@ public class Predicates {
 			}
 		}
 
+		System.out.println("===============");
+
 		albums.forEach(new Consumer<Album>() {
 			@Override
 			public void accept(Album album) {
@@ -27,6 +29,8 @@ public class Predicates {
 				}
 			}
 		});
+
+		System.out.println("===============");
 
 		//notice it's one statement all together
 		albums.forEach(album -> {
@@ -54,21 +58,24 @@ public class Predicates {
 				});
 
 		//chain with and/or
-		System.out.println("this is tested with two chained predicates: "+ myPredicate.and(abovePredicate).test
-				(albums.get(3)));
+		System.out.println("\nchained predicates: "+ myPredicate.and(abovePredicate).test(albums.get(3)));
 
 		//other  examples of predicates are IntPredicate, LongPredicate, DoublePredicate
 		IntPredicate intPredicate = i -> i > 10;
-		System.out.println(intPredicate.test(9));
+
+		System.out.println("\n=== IntPredicate =====");
+		System.out.println("default: "+ intPredicate.test(9));
+		//negate() returns opposite
+		System.out.println("negate: " + intPredicate.negate().test(9));
 
 		//BiPredicate
 		BiPredicate<Album, Album>  biPredicate = (a, b) -> a.getYear() > b.getYear();
+
+		System.out.println("\n=== BiPredicate =====");
 		System.out.println(biPredicate.test(albums.get(0), albums.get(1)));
 
 
 	}
-
-
 
 
 

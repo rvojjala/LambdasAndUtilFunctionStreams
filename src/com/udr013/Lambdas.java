@@ -24,7 +24,7 @@ public class Lambdas {
 		new Thread(() ->
 				System.out.println("printing from lambda runnable")).start();
 
-
+		System.out.println("===============");
 		//***********************************************************************************************************/
 
         /* Anonymo with comparator */
@@ -56,10 +56,13 @@ public class Lambdas {
         /* This can even be shortened using Comparator.comparing*/
 		albumList.sort((Comparator.comparing(Album::getTitle)));
 
+		System.out.println("===============");
+
 		for (Album a : albumList) {
 			System.out.println(a);
 		}
 
+		System.out.println("===============");
         /*the same using forEach*/
 		albumList.forEach(album -> System.out.println(album));
 
@@ -92,7 +95,7 @@ public class Lambdas {
 		String test = "final";
 		//test = "notfinal";
 
-		//create 'instance' and implement at the same time,
+		//create 'instance' and implement at the same time, actually more like a block statement
 		UpperCaser upperCaser = ((input) -> input.toUpperCase() + "!!!" + test);
 		//and use it
 		String upper = upperCaser.doUpperCaser(secondArtist);
@@ -100,10 +103,9 @@ public class Lambdas {
 		System.out.println(upper);
 	}
 
-	/* instance*/
+
 	public static String goUpCaser(UpperCaser uc, String s) {
 		return uc.doUpperCaser(s);
-
 	}
 
 }

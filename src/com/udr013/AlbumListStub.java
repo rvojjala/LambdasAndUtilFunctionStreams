@@ -6,15 +6,15 @@ import java.util.List;
 
 public class AlbumListStub {
 
-	private List<Album>albumList = new ArrayList<>();
+	private List<Album> albumList = new ArrayList<>();
 
 	public AlbumListStub() {
 
-		Album album1 = new Album("Paul's Boutique","Beastie Boys",1989);
-		Album album2 = new Album("Rainbow Bridge","Jimi Hendrix",1968);
-		Album album3 = new Album("Kind of Blue","Miles Davis", 1959);
-		Album album4 = new Album("Dark side of the Moon","Pink Floyd", 1973);
-		Album album5 = new Album("Licensed to Ill","Beastie Boys", 1986);
+		Album album1 = new Album("Paul's Boutique", "Beastie Boys", 1989);
+		Album album2 = new Album("Rainbow Bridge", "Jimi Hendrix", 1968);
+		Album album3 = new Album("Kind of Blue", "Miles Davis", 1959);
+		Album album4 = new Album("Dark side of the Moon", "Pink Floyd", 1973);
+		Album album5 = new Album("Licensed to Ill", "Beastie Boys", 1986);
 
 
 		albumList.add(album1);

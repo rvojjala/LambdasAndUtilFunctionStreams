@@ -47,7 +47,7 @@ public class Lambdas {
 		albumList.sort((Album album, Album album2) -> album.getTitle().compareTo(album2.getTitle()));
 
         /*because the compiler knows it's a list of type album we can leave the type out too, though for readability
-         we could specify them
+		 we could specify them
           */
 
 		albumList.sort((album, album2) -> album.getTitle().compareTo(album2.getTitle()));

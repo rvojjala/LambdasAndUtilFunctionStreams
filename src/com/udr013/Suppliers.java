@@ -22,15 +22,15 @@ public class Suppliers {
 
 	}
 
-	private static void print(Supplier supplier){
+	private static void print(Supplier supplier) {
 		System.out.println(supplier.get());
 	}
 
-	private static void print(IntSupplier supplier){
+	private static void print(IntSupplier supplier) {
 		System.out.println(supplier.getAsInt());
 	}
 
-	private static void print(DoubleSupplier supplier){
+	private static void print(DoubleSupplier supplier) {
 		System.out.println(supplier.getAsDouble());
 	}
 }

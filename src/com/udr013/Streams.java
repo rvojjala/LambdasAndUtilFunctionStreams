@@ -16,8 +16,8 @@ public class Streams {
 
 		List<Album> beastieAlbums = new ArrayList<>();
 
-		albums.forEach(album ->{
-			if(album.getArtist().equals("Beastie Boys")) {
+		albums.forEach(album -> {
+			if (album.getArtist().equals("Beastie Boys")) {
 				beastieAlbums.add(album);
 			}
 		});
@@ -27,7 +27,7 @@ public class Streams {
 
 		/* Let's do the same with a stream*/
 
-		Function<Album,String> albumFunction = a -> a.getArtist().toUpperCase();
+		Function<Album, String> albumFunction = a -> a.getArtist().toUpperCase();
 
 		beastieAlbums.stream()
 				.filter(album -> album.getArtist().equals("Beastie Boys")) //Predicate

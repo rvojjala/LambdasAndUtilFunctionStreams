@@ -13,8 +13,8 @@ public class Predicates {
 
 		List<Album> albums = new AlbumListStub().getAlbumList();
 
-		for(Album album : albums){
-			if(album.getArtist().equals("Beastie Boys")){
+		for (Album album : albums) {
+			if (album.getArtist().equals("Beastie Boys")) {
 				System.out.println(album);
 			}
 		}
@@ -46,30 +46,30 @@ public class Predicates {
 		Predicate<Album> abovePredicate = album -> album.getYear() > 1970;
 //		myPredicate = album -> album.getYear() > 1987;
 
-		printAlbums(albums,  sep, myPredicate);
+		printAlbums(albums, sep, myPredicate);
 		printAlbums(albums, sep, album -> album.getArtist().contains("M"));
 
 		//we still can use it like this
 		printAlbums(albums, sep, new Predicate<Album>() {
-					@Override
-					public boolean test(Album album) {
-						return album.getTitle().contains("of");
-					}
-				});
+			@Override
+			public boolean test(Album album) {
+				return album.getTitle().contains("of");
+			}
+		});
 
 		//chain with and/or
-		System.out.println("\nchained predicates: "+ myPredicate.and(abovePredicate).test(albums.get(3)));
+		System.out.println("\nchained predicates: " + myPredicate.and(abovePredicate).test(albums.get(3)));
 
 		//other  examples of predicates are IntPredicate, LongPredicate, DoublePredicate
 		IntPredicate intPredicate = i -> i > 10;
 
 		System.out.println("\n=== IntPredicate =====");
-		System.out.println("default: "+ intPredicate.test(9));
+		System.out.println("default: " + intPredicate.test(9));
 		//negate() returns opposite
 		System.out.println("negate: " + intPredicate.negate().test(9));
 
 		//BiPredicate
-		BiPredicate<Album, Album>  biPredicate = (a, b) -> a.getYear() > b.getYear();
+		BiPredicate<Album, Album> biPredicate = (a, b) -> a.getYear() > b.getYear();
 
 		System.out.println("\n=== BiPredicate =====");
 		System.out.println(biPredicate.test(albums.get(0), albums.get(1)));
@@ -78,12 +78,10 @@ public class Predicates {
 	}
 
 
-
-
-	private static void printAlbums(List<Album> albums, String string, Predicate<Album> predicate){
+	private static void printAlbums(List<Album> albums, String string, Predicate<Album> predicate) {
 		System.out.println(string);
 		albums.forEach(album -> {
-			if(predicate.test(album)){
+			if (predicate.test(album)) {
 				System.out.println(album.getYear());
 			}
 		});

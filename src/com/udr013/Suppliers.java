@@ -15,6 +15,7 @@ public class Suppliers {
 		IntSupplier supplier = () -> random.nextInt(10);
 		DoubleSupplier supplier2 = () -> random.nextInt(10);
 		Supplier<Album> albumSupplier = () -> new AlbumListStub().getAlbumList().get(1);
+
 		print(supplier);
 		print(supplier2);
 		print(albumSupplier);

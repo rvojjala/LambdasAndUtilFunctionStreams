@@ -28,7 +28,7 @@ public class Streams {
 //		beastieAlbums.forEach(System.out::println);
 
 
-		System.out.println("---------------------------------");
+		print("---------------------------------");
 
 		/* Let's do the same with a stream*/
 
@@ -76,6 +76,8 @@ public class Streams {
 				.sorted(Comparator.comparing(Song::getTrack))
 				.collect(Collectors.toList());
 		print(songlist);
+
+		print("---------------------------------");
 
 		//find oldest album
 		albums.stream()

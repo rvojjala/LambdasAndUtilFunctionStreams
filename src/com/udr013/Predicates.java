@@ -32,7 +32,7 @@ public class Predicates {
 
 		System.out.println("===============");
 
-		//notice it's one statement all together
+		/*notice it's one statement all together*/
 		albums.forEach(album -> {
 			if (album.getYear() < 1980) {
 				System.out.println(album);
@@ -41,15 +41,15 @@ public class Predicates {
 
 		String sep = "__________";
 
-		//we declare a predicate with a lambda
-		Predicate<Album> myPredicate = album -> album.getYear() < 1986;
-		Predicate<Album> abovePredicate = album -> album.getYear() > 1970;
-//		myPredicate = album -> album.getYear() > 1987;
+		/*we declare a predicate with a lambda*/
+		Predicate<Album> beforeYearPredicate = album -> album.getYear() < 1986;
+		Predicate<Album> afterYearPredicate = album -> album.getYear() > 1970;
+//		beforeYearPredicate = album -> album.getYear() > 1987;
 
-		printAlbums(albums, sep, myPredicate);
+		printAlbums(albums, sep, beforeYearPredicate);
 		printAlbums(albums, sep, album -> album.getArtist().contains("M"));
 
-		//we still can use it like this
+		/*we still can use it like this*/
 		printAlbums(albums, sep, new Predicate<Album>() {
 			@Override
 			public boolean test(Album album) {
@@ -57,18 +57,18 @@ public class Predicates {
 			}
 		});
 
-		//chain with and/or
-		System.out.println("\nchained predicates: " + myPredicate.and(abovePredicate).test(albums.get(3)));
+		/*chain with and/or*/
+		System.out.println("\nchained predicates: " + beforeYearPredicate.and(afterYearPredicate).test(albums.get(3)));
 
-		//other  examples of predicates are IntPredicate, LongPredicate, DoublePredicate
+		/*other  examples of predicates are IntPredicate, LongPredicate, DoublePredicate*/
 		IntPredicate intPredicate = i -> i > 10;
 
 		System.out.println("\n=== IntPredicate =====");
 		System.out.println("default: " + intPredicate.test(9));
-		//negate() returns opposite
+		/*negate() returns opposite*/
 		System.out.println("negate: " + intPredicate.negate().test(9));
 
-		//BiPredicate
+		/*BiPredicate*/
 		BiPredicate<Album, Album> biPredicate = (a, b) -> a.getYear() > b.getYear();
 
 		System.out.println("\n=== BiPredicate =====");

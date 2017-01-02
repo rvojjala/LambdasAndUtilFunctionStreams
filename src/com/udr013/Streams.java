@@ -69,7 +69,7 @@ public class Streams {
 			}
 		});
 
-		//note the sort
+		/*note the sort*/
 		List<Song> songlist = albumsWithsongs.stream()
 				.flatMap(album -> album.getSongs().subList(0, 3).stream().sorted(Comparator.comparing(Song::getTrack)))
 				.peek(System.out::println)
@@ -79,7 +79,7 @@ public class Streams {
 
 		print("---------------------------------");
 
-		//find oldest album
+		/*find oldest album*/
 		albums.stream()
 				.reduce((album, album2) -> album.getYear() < album2.getYear() ? album : album2)
 				.ifPresent(System.out::println);

@@ -73,7 +73,7 @@ public class Lambdas {
 		String firstArtist = albumList.get(0).getArtist();
 		String secondArtist = albumList.get(1).getArtist();
 
-		// we give it our two parameters
+		/* we give it our two parameters */
 		String newBla = goUpCaser(new UpperCaser() {
 			@Override
 			public String doUpperCaser(String string) {
@@ -84,7 +84,7 @@ public class Lambdas {
 		System.out.println(newBla);
 
 
-		//notice the return keyword is needed when having more statements
+		/*notice the return keyword is needed when having more statements*/
 		UpperCaser upperCasert = ((input) -> {
 			String output = input.toUpperCase() + "!!";
 			return output;
@@ -93,11 +93,11 @@ public class Lambdas {
 		System.out.println(upperCasert.doUpperCaser(firstArtist));
 
 		String test = "final";
-		//test = "notfinal";
+//		test = "notfinal";
 
-		//create 'instance' and implement at the same time, actually more like a block statement
+		/*create 'instance' and implement at the same time, actually more like a block statement*/
 		UpperCaser upperCaser = ((input) -> input.toUpperCase() + "!!!" + test);
-		//and use it
+		/*and use it*/
 		String upper = upperCaser.doUpperCaser(secondArtist);
 
 		System.out.println(upper);

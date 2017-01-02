@@ -7,7 +7,7 @@ public class Consumers {
 
 	public static void main(String[] args) {
 
-		/*Consumer is used in forEach loop though remember it returns nothing*/
+		/*forEach loop needs a Consumer */
 		Consumer<String> consumer = s -> s.toUpperCase();
 		Consumer<String> consumer1 = s -> System.out.println(s);
 

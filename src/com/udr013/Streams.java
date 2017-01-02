@@ -40,7 +40,7 @@ public class Streams {
 				.peek(System.out::println)
 				.map(albumFunction) //Function ,  the result wil be the new stream
 				.skip(1)
-				.forEach(System.out::println);  //Consumer (not the same forEach as in the function package)
+				.forEach(System.out::println);  //Consumer (btw not the same forEach as java.lang.iterable)
 
 		print("---------------------------------");
 

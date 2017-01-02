@@ -9,7 +9,12 @@ public class Consumers {
 
 		/*forEach loop needs a Consumer */
 		Consumer<String> consumer = s -> s.toUpperCase();
-		Consumer<String> consumer1 = s -> System.out.println(s);
+		/*or use method Reference*/
+		Consumer<String> consumer1 = String::toUpperCase;
+
+		Consumer<String> consumer2 = s -> System.out.println(s);
+		/*or use method Reference*/
+		Consumer<String> consumer3 = System.out::println;
 
 		/*A consumer doesn't return anything, void so this ain't gonna work*/
 //		System.out.println(consumer.accept("blabla"));

@@ -15,7 +15,7 @@ public class Functions {
 		Function<Album, String> hexValueOfYear = (album) -> Integer.toHexString(album.getYear());
 		Function<Album, String> titleToUpperCase = (album) -> album.getTitle().toUpperCase();
 		Function<Album, String> titleReplaceStuff = (album) -> album.getTitle().replace('i', '*');
-		Function<String, String> toUpperCase = s -> s.toUpperCase();
+		Function<String, String> toUpperCase = String::toUpperCase;
 
 //		albums.forEach(album -> System.out.println(hexValueOfYear.apply(album)));
 		doSomething(albums, hexValueOfYear);

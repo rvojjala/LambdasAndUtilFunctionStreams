@@ -64,7 +64,8 @@ public class Lambdas {
 
 		System.out.println("===============");
         /*the same using forEach*/
-		albumList.forEach(album -> System.out.println(album));
+//		albumList.forEach(album -> System.out.println(album));
+		albumList.forEach(System.out::println);
 
 
 		//***********************************************************************************************************/

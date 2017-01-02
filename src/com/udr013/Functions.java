@@ -34,6 +34,15 @@ public class Functions {
 
 		System.out.println("BiFunction result: " + concatStuff.apply((int) (Math.random() * 1000), albums.get(0)));
 
+		MoreFunction<String, String, Integer, Album> newAlbumFunction = (s,t,i)-> {
+			return new Album(s,t,i);
+
+		};
+
+		albums.add(newAlbumFunction.apply("Dr Doom","Kool Keith",1998));
+
+		System.out.println(albums.get(albums.size()-1));
+
 	}
 
 	private static void doSomething(List<Album> albums, Function someFunction) {

@@ -58,7 +58,9 @@ public class Predicates {
 		});
 
 		/*chain with and/or*/
-		System.out.println("\nchained predicates: " + beforeYearPredicate.and(afterYearPredicate).test(albums.get(3)));
+		Predicate<Album> yearPredicte = beforeYearPredicate.and(afterYearPredicate);
+
+		System.out.println("\nchained predicates: " + yearPredicte.test(albums.get(3)));
 
 		/*other  examples of predicates are IntPredicate, LongPredicate, DoublePredicate*/
 		IntPredicate intPredicate = i -> i > 10;
